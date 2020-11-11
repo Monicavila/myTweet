@@ -10,17 +10,31 @@ class Feed extends React.Component {
     };
   }
 
-  aumentarLikes = (index) => {
+  aumentarLike = (index) => {
     let copy = JSON.parse(JSON.stringify(this.state.tweets));
     copy[index].interaction.likes += 1;
-    copy[index].verified = true;
+    copy[index].addLike = true;
     this.setState({ tweets: copy });
   };
 
-  disminuirLikes = (index) => {
+  disminuirLike = (index) => {
     let copy = JSON.parse(JSON.stringify(this.state.tweets));
     copy[index].interaction.likes -= 1;
-    copy[index].verified = false;
+    copy[index].addLike = false;
+    this.setState({ tweets: copy });
+  };
+
+  aumentarTweet = (index) => {
+    let copy = JSON.parse(JSON.stringify(this.state.tweets));
+    copy[index].interaction.retweets += 1;
+    copy[index].addReTweet = true;
+    this.setState({ tweets: copy });
+  };
+
+  disminuirTweet = (index) => {
+    let copy = JSON.parse(JSON.stringify(this.state.tweets));
+    copy[index].interaction.retweets -= 1;
+    copy[index].addReTweet = false;
     this.setState({ tweets: copy });
   };
 
@@ -45,10 +59,12 @@ class Feed extends React.Component {
               time={"・" + tweet.time}
               content={tweet.content}
               interaction={tweet.interaction}
-              aumentarLikes={this.aumentarLikes}
-              disminuirLikes={this.disminuirLikes}
-              verified={tweet.verified}
-              solidIcon={this.solidIcon}
+              aumentarLike={this.aumentarLike}
+              disminuirLike={this.disminuirLike}
+              aumentarTweet={this.aumentarTweet}
+              disminuirTweet={this.disminuirTweet}
+              addLike={tweet.addLike}
+              addReTweet={tweet.addReTweet}
               index={index}
             />
           );

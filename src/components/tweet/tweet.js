@@ -5,6 +5,7 @@ import {
   HeartOutline,
   HeartSolid,
   RefreshOutline,
+  RefreshSolid,
   UploadOutline,
 } from "@graywolfai/react-heroicons";
 
@@ -12,11 +13,10 @@ class Tweet extends React.Component {
   constructor() {
     super();
     this.state = {
-      commentsIcon: <ChatOutline />,
       retweetsIcon: <RefreshOutline />,
+      refreshSolid: <RefreshSolid />,
       likesIcon: <HeartOutline />,
-      uploadIcon: <UploadOutline />,
-      heartSolid: <HeartSolid />
+      heartSolid: <HeartSolid />,
     };
   }
 
@@ -39,7 +39,9 @@ class Tweet extends React.Component {
         </div>
         <div className="row">
           <div className="c3">
-            <p className="action"><ChatOutline /></p>
+            <p className="action">
+              <ChatOutline />
+            </p>
             <p>
               {this.props.interaction.comments >= 1000
                 ? this.props.interaction.comments / 1000 + " mil"
@@ -47,7 +49,18 @@ class Tweet extends React.Component {
             </p>
           </div>
           <div className="c3">
-            <p className="action">{this.state.retweetsIcon}</p>
+            <p
+              className="action"
+              onClick={
+                this.props.addReTweet
+                  ? () => this.props.disminuirTweet(this.props.index)
+                  : () => this.props.aumentarTweet(this.props.index)
+              }
+            >
+              {this.props.addReTweet
+                ? this.state.refreshSolid
+                : this.state.retweetsIcon}
+            </p>
             <p>
               {this.props.interaction.retweets >= 1000
                 ? this.props.interaction.retweets / 1000 + " mil"
@@ -55,9 +68,18 @@ class Tweet extends React.Component {
             </p>
           </div>
           <div className="c3">
-            <p className="action" onClick={this.props.verified?()=>this.props.disminuirLikes(this.props.index):
-              ()=>this.props.aumentarLikes(this.props.index)}> 
-              {this.props.verified?this.state.heartSolid:this.state.likesIcon} </p>
+            <p
+              className="action"
+              onClick={
+                this.props.addLike
+                  ? () => this.props.disminuirLike(this.props.index)
+                  : () => this.props.aumentarLike(this.props.index)
+              }
+            >
+              {this.props.addLike
+                ? this.state.heartSolid
+                : this.state.likesIcon}
+            </p>
             {/*<p className="action" {this.props.verified?`onClick=${()=>this.props.disminuirLikes(this.props.index)}`:`onClick=${()=>this.props.aumentarLikes(this.props.index)}`}><HeartOutline /></p>*/}
             <p>
               {this.props.interaction.likes >= 1000
@@ -66,7 +88,9 @@ class Tweet extends React.Component {
             </p>
           </div>
           <div className="c3">
-            <p className="action"><UploadOutline /></p>
+            <p className="action">
+              <UploadOutline />
+            </p>
           </div>
           <div className="c4"></div>
         </div>

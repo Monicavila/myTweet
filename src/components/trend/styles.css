@@ -1,0 +1,15 @@
+.trend-container {
+  padding-left: 20px;
+  border-bottom: 1px solid #d4cfcf;
+}
+.row-trend {
+  text-align: left;
+}
+.p-font {
+  color: #817e7e;
+  font-size: small;
+}
+.trendTitle{
+  width: 90%;
+  font-weight: bold;
+}
