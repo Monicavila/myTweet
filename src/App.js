@@ -24,7 +24,7 @@ class App extends React.Component {
               < BellOutline />, 
               < MailOutline />, 
               < UserOutline />, 
-              < DotsCircleHorizontalOutline />
+              < DotsCircleHorizontalOutline  />
             ],
             profileUrl: 
                 'https://avatarfiles.alphacoders.com/147/thumb-1920-147101.png'

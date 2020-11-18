@@ -24,7 +24,19 @@
   flex-direction: column;
   padding: 0em 1em;
   align-items: flex-start;
-  width: 65%;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.floatMenu{
+  width: 390px;
+  display: block;
+  position: absolute;
+  background-color: white;
+  box-shadow: 3px 3px 10px #cacaca;
+  margin-left: 20px;
+  border-radius: 5px;
   overflow-x: hidden;
   overflow-y: scroll;
 }
@@ -47,14 +59,14 @@
 .t-sidebar-col {
   border-left: 1px solid #cacaca/* #F5F8FA*/;
   height: 100vh;
-  width: 35%;
+  width: 50%;
   overflow-x: hidden;
   overflow-y: scroll;
 }
 .trends {
-  width: 90%;
+  width: 100%;
   margin-left: 5%;
-  background-color: #f5f8fa;
+  background-color: #e4e6e7;
   border-radius: 15px;
 }
 .pTrends {

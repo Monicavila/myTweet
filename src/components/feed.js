@@ -1,6 +1,7 @@
 import React from "react";
 import Tweet from "./tweet/tweet";
 import { feed } from "../source";
+import moment from "moment";
 
 class Feed extends React.Component {
   constructor() {
@@ -10,61 +11,93 @@ class Feed extends React.Component {
     };
   }
 
-  aumentarLike = (index) => {
+  modifyLikes = (index) => {
     let copy = JSON.parse(JSON.stringify(this.state.tweets));
-    copy[index].interaction.likes += 1;
-    copy[index].addLike = true;
+    if (copy[index].modifyLike === false) {
+      copy[index].interaction.likes += 1;
+      copy[index].modifyLike = true;
+    } else if (copy[index].modifyLike === true) {
+      copy[index].interaction.likes -= 1;
+      copy[index].modifyLike = false;
+    }
     this.setState({ tweets: copy });
   };
 
-  disminuirLike = (index) => {
+  modifyReTweets = (index) => {
     let copy = JSON.parse(JSON.stringify(this.state.tweets));
-    copy[index].interaction.likes -= 1;
-    copy[index].addLike = false;
+    if (copy[index].modifyReTweet === false) {
+      copy[index].interaction.retweets += 1;
+      copy[index].modifyReTweet = true;
+    } else if (copy[index].modifyReTweet === true) {
+      copy[index].interaction.retweets -= 1;
+      copy[index].modifyReTweet = false;
+    }
     this.setState({ tweets: copy });
   };
 
-  aumentarTweet = (index) => {
-    let copy = JSON.parse(JSON.stringify(this.state.tweets));
-    copy[index].interaction.retweets += 1;
-    copy[index].addReTweet = true;
+  deleteATweet = (index) => {
+    let copy = [...this.state.tweets];
+    copy.splice(index, 1);
     this.setState({ tweets: copy });
   };
 
-  disminuirTweet = (index) => {
+  toggleDotsMenu = (index) => {
     let copy = JSON.parse(JSON.stringify(this.state.tweets));
-    copy[index].interaction.retweets -= 1;
-    copy[index].addReTweet = false;
+    copy[index].showDotsMenu = !copy[index].showDotsMenu;
     this.setState({ tweets: copy });
+  };
+
+  sendTweet = () => {
+    let copy = JSON.parse(JSON.stringify(this.state.tweets));
+    const newTweetObj = {
+      profile: "Mónica Ávila",
+      profileName:
+        "https://avatarfiles.alphacoders.com/147/thumb-1920-147101.png",
+      username: "mavila",
+      time: moment().format("LT"),
+      content: this.props.newTweet,
+      interaction: {
+        comments: "",
+        retweets: "",
+        likes: "",
+      },
+      modifyLike: false,
+      modifyReTweet: false,
+      showDotsMenu: false,
+      selected: false,
+      verified: true,
+      blocked: false,
+    };
+    copy.unshift(newTweetObj);
+    this.setState({ tweets: copy});
+    this.props.deleteInputFn();
   };
 
   render() {
-    /*const {profile, profileName, username, content, interaction, display} = {
-            profile: "",
-            profileName: "",
-            username: "",
-            content: "",
-            interaction: "",
-            display: ""
-        };*/
 
+    const contextFunction = {
+      deleteATweetFn: this.deleteATweet,
+      toggleDotsMenuFn: this.toggleDotsMenu,
+    };
     return (
       <div>
         {this.state.tweets.map((tweet, index) => {
           return (
             <Tweet
+              key={index}
               profile={tweet.profile}
               profileUrl={tweet.profileName}
               username={"@" + tweet.username}
               time={"・" + tweet.time}
               content={tweet.content}
               interaction={tweet.interaction}
-              aumentarLike={this.aumentarLike}
-              disminuirLike={this.disminuirLike}
-              aumentarTweet={this.aumentarTweet}
-              disminuirTweet={this.disminuirTweet}
-              addLike={tweet.addLike}
-              addReTweet={tweet.addReTweet}
+              modifyLike={tweet.modifyLike}
+              modifyReTweet={tweet.modifyReTweet}
+              showDotsMenu={tweet.showDotsMenu}
+              selected={tweet.selected}
+              contextFunction={contextFunction}
+              modifyLikes={this.modifyLikes}
+              modifyReTweets={this.modifyReTweets}
               index={index}
             />
           );

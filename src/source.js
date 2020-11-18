@@ -13,8 +13,10 @@ const feed = [
             retweets: 66,
             likes: 126
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -30,8 +32,10 @@ const feed = [
             retweets: 3700,
             likes: 84000
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -47,8 +51,10 @@ const feed = [
             retweets: 100,
             likes: 693
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -63,8 +69,10 @@ const feed = [
             retweets: 1300,
             likes: 78800
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -80,8 +88,10 @@ const feed = [
             retweets: 2200,
             likes: 4200
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -98,8 +108,10 @@ const feed = [
             retweets: 34,
             likes: 524
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -114,8 +126,10 @@ const feed = [
             retweets: 76,
             likes: 434
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -130,8 +144,10 @@ const feed = [
             retweets: 3500,
             likes: 25400
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -146,8 +162,10 @@ const feed = [
             retweets: 1,
             likes: 4
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },{
@@ -162,8 +180,10 @@ const feed = [
             retweets: 3700,
             likes: 14900
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -178,8 +198,10 @@ const feed = [
             retweets: 54,
             likes: 818
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
         blocked: false
     },
@@ -197,10 +219,12 @@ const feed = [
             retweets: 30,
             likes: 723
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
-        blocked: true
+        blocked: false
     },
     {
         profile: "Youtube",
@@ -213,10 +237,12 @@ const feed = [
             retweets: 878,
             likes: 11300
         },
-        addLike: false,
-        addReTweet: false,
+        modifyLike: false,
+        modifyReTweet: false,
+        showDotsMenu: false,
+        selected: false,
         verified: true,
-        blocked: true
+        blocked: false
     }
 ];
 

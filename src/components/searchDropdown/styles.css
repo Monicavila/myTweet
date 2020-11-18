@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+  padding: 10px 20px;
+  background-color: white;
+  border-bottom: 1px solid #cacaca;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+}
+  
+.container>img{
+  width: 60px;
+  height: 60px;
+}
+
+.subContainer{
+  display: flex;
+  flex-direction: column;
+  margin-left: 15px;
+  text-align: left;
+  text-decoration: none;
+}
+.profile{
+  margin: 0;
+  color: black;
+  font-weight: bold;
+}
+
+.username{
+  color: gray;
+  text-decoration: none;
+}
+
+.profile-avatar {
+    width: 50px;
+    display: inline-block;
+    border-radius: 50%;
+  }

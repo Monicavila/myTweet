@@ -7,7 +7,10 @@ class Trend extends React.Component {
     return (
       <div className="trend-container">
         <div className="row-trend">
-          <p className="p-font">{this.props.category}</p>
+          <div className="p-font">{this.props.category}</div>
+          <div className="contextualTrendDotsMenu">
+            <DotsHorizontalOutline />
+          </div>
         </div>
         <div className="row-trend">
           <p className="trendTitle">{this.props.title}</p>

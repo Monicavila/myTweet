@@ -41,3 +41,16 @@
 .t-post-tweet .t-profile-img{
     width: 10%;
 }
+
+.btnTwittear{
+    background-color: rgb(53, 157, 223);
+    color: white;
+    font-weight: bold;
+    border-radius: 60px;
+    padding: 12px 25px;
+}
+
+.btnTwittear:hover{
+    background-color: rgba(53, 157, 223, 0.719);
+    cursor: pointer;
+}
