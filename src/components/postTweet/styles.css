@@ -15,7 +15,8 @@
 
 .t-post-tweet input:focus{
     border: none !important;
-    outline: -webkit-focus-ring-color auto 0px;
+    outline: none;
+    /*outline: -webkit-focus-ring-color auto 0px;*/
 }
 
 .t-post-tweet form{
