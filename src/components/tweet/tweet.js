@@ -74,7 +74,7 @@ class Tweet extends React.Component {
               onClick={() => this.props.modifyReTweets(this.props.index)}
             >
               {this.props.modifyReTweet
-                ? <a className= 'reTweet-solid'>{this.state.refreshSolid}</a>
+                ? <div className= 'reTweet-solid'>{this.state.refreshSolid}</div>
                 : this.state.retweetsIcon}
             </p>
             <p>
@@ -96,7 +96,7 @@ class Tweet extends React.Component {
               {/*<div className={this.props.modifyLike ? 'heart-solid' : 'likes-icon'}></div>
               <div style={this.props.modifyLike ? {color:'rgb(211, 57, 57)'} : {backgroundColor: '#FFF'}}></div>*/}
               {this.props.modifyLike
-                ? <a className= 'heart-solid'>{this.state.heartSolid}</a>
+                ? <div className= 'heart-solid'>{this.state.heartSolid}</div>
                 : this.state.likesIcon}
             </p>
             <p>
