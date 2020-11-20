@@ -74,12 +74,12 @@ class Tweet extends React.Component {
               onClick={() => this.props.modifyReTweets(this.props.index)}
             >
               {this.props.modifyReTweet
-                ? this.state.refreshSolid
+                ? <a className= 'reTweet-solid'>{this.state.refreshSolid}</a>
                 : this.state.retweetsIcon}
             </p>
             <p>
               {this.props.interaction.retweets >= 1000
-                ? this.props.interaction.retweets / 1000 + " mil"
+                ? (this.props.interaction.likes / 1000).toFixed(1) + " mil"
                 : this.props.interaction.retweets}
             </p>
           </div>
@@ -93,13 +93,15 @@ class Tweet extends React.Component {
                   : () => this.props.aumentarLike(this.props.index)*/
               }
             >
+              {/*<div className={this.props.modifyLike ? 'heart-solid' : 'likes-icon'}></div>
+              <div style={this.props.modifyLike ? {color:'rgb(211, 57, 57)'} : {backgroundColor: '#FFF'}}></div>*/}
               {this.props.modifyLike
-                ? this.state.heartSolid
+                ? <a className= 'heart-solid'>{this.state.heartSolid}</a>
                 : this.state.likesIcon}
             </p>
             <p>
               {this.props.interaction.likes >= 1000
-                ? this.props.interaction.likes / 1000 + " mil"
+                ? (this.props.interaction.likes / 1000).toFixed(1) + " mil"
                 : this.props.interaction.likes}
             </p>
           </div>

@@ -140,13 +140,19 @@
   border-radius: 50%;
   background-color:  rgba(60, 167, 18, 0.26);
 }
+.reTweet-solid {
+  color: rgba(60, 167, 18);
+}
 
 .c3L {
   width: 20%;
   display: flex;
   align-items: center;
 }
-.c3L:hover{
+.c3L:hover {
+  color: rgb(211, 57, 57);
+}
+.heart-solid {
   color: rgb(211, 57, 57);
 }
 .c3L .action {
